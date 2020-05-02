@@ -1,7 +1,7 @@
 const parkings = [
     {
         id: 1,
-        title: "Paide Parking",
+        title: "Parking. 1",
         price: 10,
         rating: 4.2,
         spots: 20,
@@ -49,7 +49,7 @@ const parkings = [
     },
     {
         id: 5,
-        title: "Parking. 4",
+        title: "Parking. 5",
         price: 50,
         rating: 5,
         spots: 20,
@@ -61,7 +61,7 @@ const parkings = [
     },
     {
         id: 6,
-        title: "Parking. 4",
+        title: "Parking.6",
         price: 50,
         rating: 5,
         spots: 20,

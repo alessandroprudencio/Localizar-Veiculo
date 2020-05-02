@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { StyleSheet, Dimensions, Text, View } from 'react-native'
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
@@ -9,9 +9,9 @@ const { height, width } = Dimensions.get('screen')
 const Parking = (props) => {
 
     const [hours, setHour] = useState(10)
-
+    
     return (
-        <TouchableWithoutFeedback key={props.data.id} style={styles.parking} onPress={() => props.toogleActive(props.data.id)}>
+        <TouchableWithoutFeedback key={props.data.id} style={styles.parking}>
             <View style={{ flex: 1, flexDirection: "column" }}>
                 <Text style={{ fontSize: 14, marginBottom: 11, }}>x{props.data.spots} {props.data.title}</Text>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
