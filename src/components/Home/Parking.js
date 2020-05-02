@@ -1,35 +1,40 @@
 import React, { useState } from 'react';
 
 import { StyleSheet, Dimensions, Text, View } from 'react-native'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
 
 const { height, width } = Dimensions.get('screen')
 
 const Parking = (props) => {
 
-    const { hours, setHour } = useState(0)
+    const [hours, setHour] = useState(10)
 
     return (
-        <View key={`parking-${props.item.id}`} style={styles.parking}>
+        <View key={props.item.id} style={styles.parking}>
             <View style={{ flex: 1, flexDirection: "column" }}>
-                <Text>x  {props.item.spots} {props.item.title}</Text>
-            </View>
-            <View style={{ flex: 1, flexDirection: "row" }}>
-                <View style={{ flex: 1 }}>
-                    <Text>{props.item.price}</Text>
-                    <Text>{props.item.rating}</Text>
-                </View>
-                <TouchableWithoutFeedback>
-                    <View style={styles.buy}>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 20, color: "white" }}> R$ {props.item.price * hours}</Text>
-                            <Text style={{ color: "white" }}>{props.item.price} X  {hours} h</Text>
-                        </View>
-                        <View style={{ flex: 0.5, justifyContent: "center", alignItems: "center" }}>
-                            <Text style={{ color: "white" }}></Text>
-                        </View>
+                <Text style={{ fontSize: 14, marginBottom: 11, }}>x{props.item.spots} {props.item.title}</Text>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <View style={{ padding: 8, alignItems: "center", width: 60, borderRadius: 6, borderWidth: 0.5, borderColor: "grey" }}>
+                        <Text style={{ fontSize: 14 }}> 05:00</Text>
                     </View>
-                </TouchableWithoutFeedback>
+                    <Text style={{ fontSize: 16, color: "#999" }}> hrs</Text>
+                </View>
+            </View>
+            <View style={{ flex: 1.3, flexDirection: "row" }}>
+                <View style={{ flex: 1, justifyContent: "center", }}>
+                    <Ionicons style={{ marginBottom: 10, }} name="ios-pricetag" size={16} color="#91a1a9" > <Text style={{ marginLeft: 16, color: "#000" }}>R${props.item.price}</Text></Ionicons>
+                    <Ionicons name="ios-star" size={15} color="#91a1a9" > <Text style={{ marginLeft: 15, color: "#000" }}>{props.item.rating}</Text></Ionicons>
+                </View>
+                <TouchableOpacity style={styles.buy}>
+                    <View style={{ flex: 1, justifyContent: "center" }}>
+                        <Text style={{ fontSize: 24, color: "white" }}>R${props.item.price * 2}</Text>
+                        <Text style={{ color: "white" }}>{props.item.price}X{hours} hrs</Text>
+                    </View>
+                    <View style={{ justifyContent: "center", alignItems: "center" }}>
+                        <Text style={{ fontSize: 24, color: "white" }}> <Ionicons name="ios-arrow-forward" size={23} color="#fff" /></Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </View >
     )
@@ -41,20 +46,18 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         borderRadius: 6,
         padding: 12,
-        marginHorizontal: 24,
-        width: width - (24 * 2),
-
+        height: 106,
+        marginHorizontal: 22,
+        width: width - (22 * 2)
     },
     buy: {
         flex: 1,
-        flexDirection: 'row',
-        padding: 5,
+        width: 100,
+        flexDirection: "row",
+        padding: 6,
         backgroundColor: 'red',
-        borderRadius: 6,
-
+        borderRadius: 6
     }
 });
-
-
 
 export default Parking;

@@ -7,8 +7,8 @@ import Parking from './Parking'
 const parkings = [
     {
         id: 1,
-        title: "Parking. 1",
-        price: 5,
+        title: "Paide Parking",
+        price: 10,
         rating: 4.2,
         spots: 20,
         free: 10,
@@ -32,7 +32,7 @@ const parkings = [
     {
         id: 3,
         title: "Parking. 3",
-        price: 5,
+        price: 50,
         rating: 5,
         spots: 20,
         free: 10,
@@ -56,7 +56,7 @@ const Parkings = () => {
             // contentInset={{ top: 0, left: 12, bottom: 0, right: 12 }}
             showsHorizontalScrollIndicator={false}
             style={styles.parkings}>
-            {parkings.map(parking => <Parking item={parking} />)}
+            {parkings.map(parking => <Parking item={parking} key={parking.id} />)}
         </ScrollView >
     )
 }
