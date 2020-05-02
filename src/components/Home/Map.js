@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { StyleSheet } from 'react-native'
+import { StyleSheet, View, Text, Image } from 'react-native'
 
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import MapView from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+
+const { Marker } = MapView
+
+const Map = (props) => {
 
 
-const Map = () => {
     return (
         <MapView
             style={styles.map}
@@ -17,7 +21,16 @@ const Map = () => {
             }}
             showsUserLocation
             loadingEnabled
-        />
+        >
+            {props.data.map(parking =>
+                <Marker
+                    key={`marker-${parking.id}`}
+                    coordinate={parking.coordinate} >
+                    <TouchableWithoutFeedback onPress={() => props.toogleActive(parking.id)}>
+                        <Image style={{ width: 40 }} resizeMode="contain" source={props.active === parking.id ? require('../../../assets/images/icon-car-find-active.png') : require('../../../assets/images/icon-car-find.png')} />
+                    </TouchableWithoutFeedback>
+                </Marker>)}
+        </MapView>
     )
 }
 

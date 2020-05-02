@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { View, StyleSheet, SafeAreaView, Text } from 'react-native'
 
 import Map from '../components/Home/Map'
 import Header from '../components/Home/Header'
 import Parkings from '../components/Home/Parkings'
-import Footer from '../components/Home/Footer'
+
+import parkings from '../services/data'
+
+
 
 const Home = () => {
+    const [active, setActive] = useState(null)
+
+    const activeState = (id) => {
+        setActive(id)
+    }
+
     return (
         <View style={{ flex: 1, backgroundColor: "#fff" }}>
             <Header />
-            <Map />
-            <Parkings />
-            <Footer />
+            <Map active={active} data={parkings} toogleActive={activeState} />
+            <Parkings toogleActive={activeState} data={parkings} />
         </View>
     )
 }
