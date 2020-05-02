@@ -8,8 +8,6 @@ import Parkings from '../components/Home/Parkings'
 
 import parkings from '../services/data'
 
-
-
 const Home = () => {
     const [active, setActive] = useState(null)
     const [location, setLocation] = useState({})

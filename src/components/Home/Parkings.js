@@ -4,7 +4,6 @@ import { StyleSheet, Picker, FlatList, Text, View } from 'react-native'
 
 import Parking from './Parking'
 
-
 const Parkings = (props) => {
     const { toogleActive } = props
     return (
@@ -32,7 +31,5 @@ const styles = StyleSheet.create({
         bottom: 45
     }
 });
-
-
 
 export default Parkings;
