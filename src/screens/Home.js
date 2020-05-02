@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { View, StyleSheet, SafeAreaView, Text } from 'react-native'
 
@@ -12,15 +12,28 @@ import parkings from '../services/data'
 
 const Home = () => {
     const [active, setActive] = useState(null)
+    const [location, setLocation] = useState({})
 
     const activeState = (id) => {
         setActive(id)
     }
 
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(
+            (position) => { setLocation({ lat: position.coords.latitude, lng: position.coords.longitude }) },
+            (error) => { console.log(error) },
+            {
+                enableHighAccuracy: true,
+                timeout: 20000,
+                maximumAge: 10000
+            }
+        )
+    });
+
     return (
         <View style={{ flex: 1, backgroundColor: "#fff" }}>
             <Header />
-            <Map active={active} data={parkings} toogleActive={activeState} />
+            <Map location={location} active={active} data={parkings} toogleActive={activeState} />
             <Parkings toogleActive={activeState} data={parkings} />
         </View>
     )

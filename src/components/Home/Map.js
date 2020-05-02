@@ -9,13 +9,12 @@ const { Marker } = MapView
 
 const Map = (props) => {
 
-
     return (
         <MapView
             style={styles.map}
             region={{
-                latitude: -20.435322,
-                longitude: -54.5700551,
+                latitude: props.location.lat,
+                longitude: props.location.lng,
                 latitudeDelta: 0.0143,
                 longitudeDelta: 0.0143,
             }}
