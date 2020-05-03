@@ -1,10 +1,10 @@
 const parkings = [
     {
         id: 1,
-        title: "Parking. 1",
+        name: "Gilberto",
+        description: "Curabitur malesuada porttitor cursus. Quisque nec sem lorem. Nunc neque turpis, mollis ac nulla in, semper tincidunt erat. Mauris dui ipsum, mattis nec vestibulum ac, sagittis molestie massa. Sed ac dui tempor, imperdiet purus vitae, convallis lacus",
         price: 10,
         rating: 4.2,
-        spots: 20,
         free: 10,
         coordinate: {
             latitude: -20.435322,
@@ -13,10 +13,10 @@ const parkings = [
     },
     {
         id: 2,
-        title: "Parking. 2",
+        name: "Afonso",
+        description: "Curabitur malesuada porttitor cursus. Quisque nec sem lorem. Nunc neque turpis, mollis ac nulla in, semper tincidunt erat. Mauris dui ipsum, mattis nec vestibulum ac, sagittis molestie massa. Sed ac dui tempor, imperdiet purus vitae, convallis lacus",
         price: 10,
         rating: 4.2,
-        spots: 20,
         free: 10,
         coordinate: {
             latitude: -20.4394925,
@@ -25,10 +25,10 @@ const parkings = [
     },
     {
         id: 3,
-        title: "Parking. 3",
+        name: "Amarildo",
+        description: "Curabitur malesuada porttitor cursus. Quisque nec sem lorem. Nunc neque turpis, mollis ac nulla in, semper tincidunt erat. Mauris dui ipsum, mattis nec vestibulum ac, sagittis molestie massa. Sed ac dui tempor, imperdiet purus vitae, convallis lacus",
         price: 50,
         rating: 5,
-        spots: 20,
         free: 10,
         coordinate: {
             latitude: -20.4194938,
@@ -37,10 +37,10 @@ const parkings = [
     },
     {
         id: 4,
-        title: "Parking. 4",
+        name: "Percival",
+        description: "Curabitur malesuada porttitor cursus. Quisque nec sem lorem. Nunc neque turpis, mollis ac nulla in, semper tincidunt erat. Mauris dui ipsum, mattis nec vestibulum ac, sagittis molestie massa. Sed ac dui tempor, imperdiet purus vitae, convallis lacus",
         price: 50,
         rating: 5,
-        spots: 20,
         free: 10,
         coordinate: {
             latitude: -20.4112309,
@@ -49,10 +49,10 @@ const parkings = [
     },
     {
         id: 5,
-        title: "Parking. 5",
+        name: "Clotiude",
+        description: "Curabitur malesuada porttitor cursus. Quisque nec sem lorem. Nunc neque turpis, mollis ac nulla in, semper tincidunt erat. Mauris dui ipsum, mattis nec vestibulum ac, sagittis molestie massa. Sed ac dui tempor, imperdiet purus vitae, convallis lacus",
         price: 50,
         rating: 5,
-        spots: 20,
         free: 10,
         coordinate: {
             latitude: -20.425738,
@@ -61,10 +61,10 @@ const parkings = [
     },
     {
         id: 6,
-        title: "Parking.6",
+        name: "Natali",
+        description: "Curabitur malesuada porttitor cursus. Quisque nec sem lorem. Nunc neque turpis, mollis ac nulla in, semper tincidunt erat. Mauris dui ipsum, mattis nec vestibulum ac, sagittis molestie massa. Sed ac dui tempor, imperdiet purus vitae, convallis lacus",
         price: 50,
         rating: 5,
-        spots: 20,
         free: 10,
         coordinate: {
             latitude: -20.4247819,

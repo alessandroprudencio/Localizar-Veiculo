@@ -11,14 +11,19 @@ import parkings from '../services/data'
 const Home = () => {
     const [active, setActive] = useState(null)
     const [location, setLocation] = useState({})
-    const [selectItem, setItem] = useState(null)
     const [scroll, setScroll] = useState(null)
+    const [showModal, setShowModal] = useState(false)
+    const [itemModal, setItemModal] = useState(null)
 
     const activeState = (id, index) => {
         setActive(id)
-        setItem(id)
         setScroll(index)
     }
+
+    const showModalState = (state, item) => {
+        setShowModal(state)
+        setItemModal(item)
+    };
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -35,8 +40,8 @@ const Home = () => {
     return (
         <View style={{ flex: 1, backgroundColor: "#fff" }}>
             <Header />
-            <Map selectItem={selectItem} location={location} active={active} data={parkings} toogleActive={activeState} />
-            <Parkings scroll={scroll} selectItem={selectItem} data={parkings} />
+            <Map location={location} active={active} data={parkings} toogleActive={activeState} />
+            <Parkings itemModal={itemModal} showModal={showModal} activeModal={showModalState} scroll={scroll} data={parkings} />
         </View>
     )
 }

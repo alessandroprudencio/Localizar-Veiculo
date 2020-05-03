@@ -4,10 +4,12 @@ import { StyleSheet, Picker, FlatList, Text, View } from 'react-native'
 
 import Parking from './Parking'
 
+import Modal from './Modal'
+
 const renderEmptyComponent = () => <Text>Nenhum veiculo disponivel</Text>;
 
 const Parkings = (props) => {
-    const { selectItem, scroll, data } = props
+    const { scroll, data, showModal, activeModal, itemModal } = props
     const flatList = createRef();
 
     useEffect(() => {
@@ -21,22 +23,24 @@ const Parkings = (props) => {
     })
 
     return (
-        <FlatList
-            scrollEnabled
-            pagingEnabled
-            horizontal
-            ref={flatList}
-            centerContent
-            extraData={selectItem}
-            scrollEventThrottle={16}
-            snapToAlignment="center"
-            showsHorizontalScrollIndicator={false}
-            style={styles.parkings}
-            data={data}
-            keyExtractor={(item, index) => `${item.id}`}
-            ListEmptyComponent={renderEmptyComponent}
-            renderItem={({ item }) => <Parking data={item} key={item.id} />}
-        />
+        <View>
+            <FlatList
+                scrollEnabled
+                pagingEnabled
+                horizontal
+                ref={flatList}
+                centerContent
+                scrollEventThrottle={16}
+                snapToAlignment="center"
+                showsHorizontalScrollIndicator={false}
+                style={styles.parkings}
+                data={data}
+                keyExtractor={(item, index) => `${item.id}`}
+                ListEmptyComponent={renderEmptyComponent}
+                renderItem={({ item }) => <Parking activeModal={activeModal} data={item} key={item.id} />}
+            />
+            {showModal && <Modal showModal={showModal} data={itemModal} activeModal={activeModal} />}
+        </View>
     )
 }
 
