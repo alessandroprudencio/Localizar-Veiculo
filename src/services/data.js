@@ -9,7 +9,7 @@ const parkings = [
         },
         price: 10,
         rating: 4.2,
-        devolution: "14:00",
+        devolution: "18:20",
         departure_date: "05/08/2020 18:20",
         coordinate: {
             latitude: -20.435322,
@@ -26,7 +26,7 @@ const parkings = [
         },
         price: 10,
         rating: 4.2,
-        devolution: "14:00",
+        devolution: "18:20",
         departure_date: "05/08/2020 18:20",
         coordinate: {
             latitude: -20.4394925,
@@ -43,7 +43,7 @@ const parkings = [
         },
         price: 50,
         rating: 5,
-        devolution: "14:00",
+        devolution: "18:20",
         departure_date: "05/08/2020 18:20",
         coordinate: {
             latitude: -20.4194938,
@@ -60,7 +60,7 @@ const parkings = [
         },
         price: 50,
         rating: 5,
-        devolution: "14:00",
+        devolution: "18:20",
         departure_date: "05/08/2020 18:20",
         coordinate: {
             latitude: -20.4112309,
@@ -77,7 +77,7 @@ const parkings = [
         },
         price: 50,
         rating: 5,
-        devolution: "14:00",
+        devolution: "18:20",
         departure_date: "05/08/2020 18:20",
         coordinate: {
             latitude: -20.425738,
@@ -94,7 +94,7 @@ const parkings = [
         },
         price: 50,
         rating: 5,
-        devolution: "14:00",
+        devolution: "18:20",
         departure_date: "05/08/2020 18:20",
         coordinate: {
             latitude: -20.4247819,
