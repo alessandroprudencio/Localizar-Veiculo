@@ -22,7 +22,7 @@ const Parking = (props) => {
                 </View>
                 <TouchableOpacity style={styles.buy} onPress={() => activeModal(true, data)}  >
                     <View style={{ flex: 1, justifyContent: "center" }}>
-                        <Text style={{ fontSize: 24, color: "white" }}>R${data.price * 2}</Text>
+                        <Text style={{ fontSize: 24, color: "white" }}>R${data.price}</Text>
                     </View>
                     <View style={{ justifyContent: "center", alignItems: "center" }}>
                         <Text style={{ fontSize: 24, color: "white" }}> <Ionicons name="ios-arrow-forward" size={23} color="#fff" /></Text>
