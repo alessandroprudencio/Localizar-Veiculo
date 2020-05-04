@@ -1,15 +1,15 @@
 import React, { useEffect, createRef } from 'react';
-
-import { StyleSheet, Picker, FlatList, Text, View } from 'react-native'
-
+import { StyleSheet, FlatList, Text, View, Dimensions } from 'react-native'
 import Parking from './Parking'
-
 import Modal from './Modal'
+import parkings from '../../services/data';
 
-const renderEmptyComponent = () => <Text>Nenhum veiculo disponivel</Text>;
+const { width } = Dimensions.get('window')
+
+const renderEmptyComponent = () => <Text>Nenhum veiculo</Text>;
 
 const Parkings = (props) => {
-    const { scroll, data, showModal, activeModal, itemModal } = props
+    const { scroll, activeState, data, showModal, activeModal, carDelivered, itemModal, setPosition } = props
     const flatList = createRef();
 
     useEffect(() => {
@@ -35,11 +35,23 @@ const Parkings = (props) => {
                 showsHorizontalScrollIndicator={false}
                 style={styles.parkings}
                 data={data}
-                keyExtractor={(item, index) => `${item.id}`}
+                keyExtractor={(item) => `${item.id}`}
                 ListEmptyComponent={renderEmptyComponent}
+                onMomentumScrollEnd={(e) => {
+                    const scrolled = e.nativeEvent.contentOffset.x
+
+                    const car = (scrolled > 0) ? scrolled / width : 0
+
+                    const { latitude, longitude } = data[car].coordinate
+
+                    activeState(data[car].id)
+
+                    setPosition(latitude, longitude)
+
+                }}
                 renderItem={({ item }) => <Parking activeModal={activeModal} data={item} key={item.id} />}
             />
-            {showModal && <Modal showModal={showModal} data={itemModal} activeModal={activeModal} />}
+            {showModal && <Modal carDelivered={carDelivered} showModal={showModal} data={itemModal} activeModal={activeModal} />}
         </View>
     )
 }
