@@ -33,7 +33,7 @@ cd Localizar-Veiculo
 ```
 
 ```
-npm install | yarn
+yarn | npm install
 ```
 
 ```
