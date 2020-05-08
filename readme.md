@@ -1,7 +1,9 @@
 # Localizar-Veiculo
 
-Criando uma interface com React Native + expo, que tem como finalidade um proprietario de veiculos automotivos os alugar e dando a possibilidade de visualizar em tempo real os seus carros...
+Criando uma interface com React Native + expo, que tem como finalidade permitir a um proprietario de veiculos automotivos a possibilidade de visualizar aonde esta os seus carros...
  
+ <img  src="https://github.com/alessandroprudencio/Localizar-Veiculo/blob/master/assets/screenshots/print.png" />
+
 ## Vamos começar!
 
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local, para fins de desenvolvimento e teste. Consulte me  para obter notas sobre como implantar o projeto em produção.
@@ -23,11 +25,11 @@ Expo Client caso queira testar diretamente na tela do seu smartphone .
 Caso não tenha o expo instalado em sua maquina, segue a documentação https://reactnative.dev/docs/environment-setup
 
 ```
-git clone https://github.com/alessandroprudencio/Food-App.git
+git clone https://github.com/alessandroprudencio/Localizar-Veiculo.git
 ```
 
 ```
-cd Food-App 
+cd Localizar-Veiculo 
 ```
 
 ```
