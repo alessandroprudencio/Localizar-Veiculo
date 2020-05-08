@@ -1,6 +1,6 @@
 # Localizar-Veiculo
 
-Criando uma interface com React Native + expo, que tem como finalidade permitir a um proprietario de veiculos automotivos a possibilidade de visualizar aonde esta os seus carros...
+Criando uma interface com React Native + expo, que tem como finalidade permitir a um proprietario de veiculos automotivos a possibilidade de visualizar aonde esta os seus carros, acompanhar hora da entrega e confirmar a devoluçao do veiculo...
  
  <img  src="https://github.com/alessandroprudencio/Localizar-Veiculo/blob/master/assets/screenshots/print.png" />
 
